@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ôn tập: Các quân, binh chủng trong QĐNDVN</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2E4F2F;--g2:#3f6b41;--gl:#e8f0e8;--bg:#f4f6f3;--tx:#1f2a1f;--mu:#6b756b;--bd:#d5ddd5;--ok:#1e8e3e;--okb:#e6f4ea;--no:#d93025;--nob:#fce8e6;--wh:#fff}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,Roboto,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5}
+header{background:var(--g);color:#fff;padding:14px 16px;text-align:center}
+header h1{font-size:1.05rem;font-weight:700}
+header p{font-size:.8rem;opacity:.85}
+main{max-width:980px;margin:0 auto;padding:16px}
+.card{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:18px;margin-bottom:14px}
+.btn{border:0;border-radius:8px;padding:10px 18px;font:600 .95rem Inter,sans-serif;cursor:pointer;background:var(--g);color:#fff}
+.btn:hover{background:var(--g2)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.sec{background:var(--wh);color:var(--g);border:1.5px solid var(--g)}
+.btn.sec:hover{background:var(--gl)}
+.btn.danger{background:#b3261e}
+.hidden{display:none!important}
+.layout{display:grid;grid-template-columns:1fr 260px;gap:14px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.palette-card{order:-1}}
+.top{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600;margin-bottom:6px}
+.bar{height:10px;background:var(--gl);border-radius:6px;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;background:var(--g);width:0;transition:width .3s}
+.qtext{font-size:1.1rem;font-weight:600;margin:6px 0 14px}
+.opt{display:flex;gap:10px;width:100%;text-align:left;background:var(--wh);border:1.5px solid var(--bd);border-radius:10px;padding:12px;margin-bottom:9px;font:500 .97rem Inter,sans-serif;cursor:pointer;color:var(--tx);transition:.15s}
+.opt:hover{border-color:var(--g);background:var(--gl)}
+.opt b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.opt.sel{border-color:var(--g);background:var(--gl)}
+.opt.sel b{background:var(--g);color:#fff}
+.opt.ok{border-color:var(--ok);background:var(--okb);cursor:default}.opt.ok b{background:var(--ok);color:#fff}
+.opt.no{border-color:var(--no);background:var(--nob);cursor:default}.opt.no b{background:var(--no);color:#fff}
+.opt.dis{cursor:default}.opt.dis:hover{border-color:var(--bd);background:var(--wh)}
+.opt.ok.dis:hover{border-color:var(--ok);background:var(--okb)}
+.nav{display:flex;justify-content:space-between;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px;margin:10px 0}
+.pal button{height:38px;border-radius:8px;border:1.5px solid var(--bd);background:var(--wh);font:600 .85rem Inter,sans-serif;cursor:pointer}
+.pal button.done{background:var(--g);color:#fff;border-color:var(--g)}
+.pal button.cur{outline:3px solid #c9a227}
+.pal button.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.pal button.no{background:var(--no);color:#fff;border-color:var(--no)}
+.legend{font-size:.78rem;color:var(--mu)}
+.hero{text-align:center;padding:30px 16px}
+.hero h2{color:var(--g);margin-bottom:8px}
+.hero p{color:var(--mu);margin-bottom:18px}
+.score{text-align:center}
+.big{font-size:3rem;font-weight:700;color:var(--g)}
+.rank{display:inline-block;padding:5px 16px;border-radius:20px;font-weight:700;margin:6px 0 14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--bg);border-radius:10px;padding:10px}
+.stat b{display:block;font-size:1.4rem}
+.exp{background:#fff8e1;border-left:4px solid #c9a227;padding:10px 12px;border-radius:6px;font-size:.92rem;margin-top:8px}
+.tag{font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:12px;color:#fff}
+.rv{border-left:5px solid var(--bd)}.rv.ok{border-left-color:var(--ok)}.rv.no{border-left-color:var(--no)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9}
+.modal .card{max-width:400px;width:100%;margin:0}
+.modal .nav{justify-content:flex-end}
+</style>
+</head>
+<body>
+<header>
+  <h1>HIỂU BIẾT CHUNG VỀ CÁC QUÂN, BINH CHỦNG TRONG QUÂN ĐỘI NHÂN DÂN VIỆT NAM</h1>
+  <p>Trắc nghiệm ôn tập bài giảng</p>
+</header>
+<main>
+  <section id="start" class="card hero">
+    <h2>Sẵn sàng ôn tập?</h2>
+    <p id="startInfo"></p>
+    <button class="btn" onclick="startQuiz()">Bắt đầu làm bài</button>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="layout">
+      <div class="card">
+        <div class="top"><span id="qCount"></span><span id="timer">00:00</span></div>
+        <div class="bar"><i id="barFill"></i></div>
+        <div id="qBody"></div>
+        <div class="nav">
+          <button class="btn sec" id="prevBtn" onclick="go(-1)">← Câu trước</button>
+          <button class="btn" id="nextBtn" onclick="go(1)">Câu tiếp theo →</button>
+          <button class="btn danger" onclick="openConfirm()">Nộp bài / Hoàn thành</button>
+        </div>
+      </div>
+      <div class="card palette-card">
+        <b>Danh sách câu hỏi</b>
+        <div class="pal" id="pal"></div>
+        <div class="legend">Xanh đậm: đã chọn · Trắng: chưa làm · Viền vàng: câu hiện tại</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="card score">
+      <div class="big" id="sc10"></div>
+      <div id="scPct" style="color:var(--mu)"></div>
+      <div class="rank" id="rank"></div>
+      <div class="stats">
+        <div class="stat"><b id="sOk" style="color:var(--ok)"></b>Câu đúng</div>
+        <div class="stat"><b id="sNo" style="color:var(--no)"></b>Câu sai</div>
+        <div class="stat"><b id="sSk" style="color:var(--mu)"></b>Bỏ sót</div>
+        <div class="stat"><b id="sTm"></b>Thời gian</div>
+      </div>
+      <button class="btn" onclick="showReview()">Xem lại chi tiết &amp; giải thích</button>
+      <button class="btn sec" onclick="startQuiz()">Làm lại bài thi</button>
+    </div>
+  </section>
+
+  <section id="review" class="hidden">
+    <div class="card">
+      <div class="filters">
+        <button class="btn" id="fAll" onclick="setFilter('all')">Tất cả các câu</button>
+        <button class="btn sec" id="fWrong" onclick="setFilter('wrong')">Chỉ xem câu sai</button>
+        <button class="btn sec" onclick="toResult()">← Về kết quả</button>
+        <button class="btn sec" onclick="startQuiz()">Làm lại bài thi</button>
+      </div>
+      <div class="pal" id="rpal"></div>
+    </div>
+    <div id="rList"></div>
+  </section>
+</main>
+
+<div id="confirm" class="modal hidden">
+  <div class="card">
+    <h3>Xác nhận nộp bài</h3>
+    <p id="confirmMsg" style="margin:10px 0 16px"></p>
+    <div class="nav">
+      <button class="btn sec" onclick="closeConfirm()">Tiếp tục làm</button>
+      <button class="btn danger" onclick="submitQuiz()">Nộp bài</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+{id:1,question:"Đội Việt Nam tuyên truyền giải phóng quân được thành lập ngày nào, ở đâu?",options:["22/12/1944 tại Nguyên Bình, Cao Bằng","19/8/1945 tại Hà Nội","15/5/1945 tại Thái Nguyên","22/12/1944 tại Tân Trào, Tuyên Quang"],answerIndex:0,explanation:"Ngày 22/12/1944, Đội Việt Nam tuyên truyền giải phóng quân được thành lập tại Nguyên Bình, Cao Bằng; đây là tiền thân của Quân đội nhân dân Việt Nam."},
+{id:2,question:"Khi mới thành lập, Đội Việt Nam tuyên truyền giải phóng quân có bao nhiêu cán bộ, chiến sĩ?",options:["24","34","43","54"],answerIndex:1,explanation:"Đội có 34 cán bộ, chiến sĩ khi thành lập ngày 22/12/1944."},
+{id:3,question:"Ai là người chỉ huy Đội Việt Nam tuyên truyền giải phóng quân?",options:["Đồng chí Võ Nguyên Giáp","Đồng chí Hoàng Văn Thái","Đồng chí Văn Tiến Dũng","Đồng chí Chu Văn Tấn"],answerIndex:0,explanation:"Đội do đồng chí Võ Nguyên Giáp chỉ huy."},
+{id:4,question:"Hai trận thắng đầu tiên của Đội Việt Nam tuyên truyền giải phóng quân là:",options:["Phai Khắt và Nà Ngần","Đông Khê và Cao Bằng","Hòa Bình và Sông Lô","Biên giới và Việt Bắc"],answerIndex:0,explanation:"Hai trận thắng đầu là trận Phai Khắt (25/12/1944) và Nà Ngần (26/12/1944)."},
+{id:5,question:"Đội Việt Nam tuyên truyền giải phóng quân được đổi tên thành Việt Nam giải phóng quân vào ngày nào?",options:["22/12/1944","15/5/1945","2/9/1945","19/12/1946"],answerIndex:1,explanation:"Ngày 15/5/1945, đổi tên thành Việt Nam giải phóng quân."},
+{id:6,question:"Chiến thắng nào là 12 ngày đêm \"Điện Biên Phủ trên không\"?",options:["Chiến thắng Điện Biên Phủ năm 1954","Chiến thắng B-52 tháng 12/1972","Chiến dịch Hồ Chí Minh năm 1975","Chiến thắng Biên giới năm 1950"],answerIndex:1,explanation:"Cuộc chiến đấu đánh bại cuộc tập kích bằng máy bay B-52 của Mỹ vào tháng 12/1972 được gọi là \"Điện Biên Phủ trên không\"."},
+{id:7,question:"Chiến dịch Hồ Chí Minh lịch sử, kết thúc cuộc kháng chiến chống Mỹ, diễn ra vào năm nào?",options:["1954","1968","1972","1975"],answerIndex:3,explanation:"Chiến dịch Hồ Chí Minh năm 1975 là mốc lịch sử tiêu biểu của Quân đội nhân dân Việt Nam, cùng với Điện Biên Phủ (1954) và Điện Biên Phủ trên không (12/1972)."},
+{id:8,question:"Bác Hồ khen ngợi Quân đội ta: \"Quân đội ta trung với Đảng, ...\"",options:["hiếu với dân","yêu Tổ quốc","vì nhân dân phục vụ","dũng cảm kiên cường"],answerIndex:0,explanation:"Lời Bác Hồ: \"Quân đội ta trung với Đảng, hiếu với dân, sẵn sàng chiến đấu hy sinh vì độc lập, tự do của Tổ quốc, vì chủ nghĩa xã hội\"."},
+{id:9,question:"Quân đội nhân dân Việt Nam có mấy chức năng và gồm những chức năng nào?",options:["2 chức năng: chiến đấu, công tác","3 chức năng: đội quân chiến đấu, đội quân công tác, đội quân lao động sản xuất","3 chức năng: chiến đấu, huấn luyện, xây dựng","4 chức năng: chiến đấu, công tác, sản xuất, đối ngoại"],answerIndex:1,explanation:"Quân đội có 3 chức năng: đội quân chiến đấu, đội quân công tác, đội quân lao động sản xuất."},
+{id:10,question:"Cơ quan nào sau đây có tên gọi tắt là TC2?",options:["Tổng cục Chính trị","Tổng cục Hậu cần - Kỹ thuật","Tổng cục Công nghiệp quốc phòng","Tổng cục Tình báo quốc phòng"],answerIndex:3,explanation:"Tổng cục Tình báo quốc phòng (TC2) là một trong các cơ quan chỉ huy, quản lý của Quân đội, cùng Bộ Quốc phòng, Bộ Tổng Tham mưu, Tổng cục Chính trị, Tổng cục Hậu cần - Kỹ thuật, Tổng cục Công nghiệp quốc phòng."},
+{id:11,question:"Trong cơ cấu đơn vị chiến đấu của Quân đội, các Quân khu gồm:",options:["Quân khu 1, 2, 3, 4, 5, 7, 9 và Bộ Tư lệnh Thủ đô Hà Nội","Quân khu 1, 2, 3, 4, 6, 8, 9","Quân khu 1, 2, 3, 5, 7, 8, 10","Quân khu 2, 3, 4, 5, 6, 7, 9"],answerIndex:0,explanation:"Các Quân khu gồm Quân khu 1, 2, 3, 4, 5, 7, 9 và Bộ Tư lệnh Thủ đô Hà Nội."},
+{id:12,question:"Các Quân đoàn hiện nay trong Quân đội nhân dân Việt Nam là:",options:["Quân đoàn 1 và 2","Quân đoàn 3 và 4","Quân đoàn 12 và 34","Quân đoàn 12 và 14"],answerIndex:2,explanation:"Đơn vị chiến đấu cấp quân đoàn gồm Quân đoàn 12 và Quân đoàn 34."},
+{id:13,question:"Bộ Tư lệnh Bộ đội Biên phòng được thành lập ngày nào?",options:["03/3/1959","28/8/1998","15/8/2017","07/5/1955"],answerIndex:0,explanation:"Bộ đội Biên phòng thành lập ngày 03/3/1959."},
+{id:14,question:"Bộ Tư lệnh Cảnh sát biển được thành lập ngày 28/8/1998 và hiện có mấy Vùng Cảnh sát biển?",options:["2","3","4","5"],answerIndex:2,explanation:"Bộ Tư lệnh Cảnh sát biển thành lập 28/8/1998, gồm 4 Vùng Cảnh sát biển."},
+{id:15,question:"Bộ Tư lệnh Tác chiến không gian mạng được thành lập ngày nào?",options:["03/3/1959","28/8/1998","15/8/2017","20/8/2025"],answerIndex:2,explanation:"Bộ Tư lệnh Tác chiến không gian mạng thành lập ngày 15/8/2017."},
+{id:16,question:"Theo Thông tư 83/2025/TT-BQP, khi tổ chức chính quyền địa phương 2 cấp thì:",options:["Giữ nguyên Ban chỉ huy quân sự cấp huyện","Xây dựng Ban chỉ huy phòng thủ khu vực, không duy trì Ban chỉ huy quân sự cấp huyện","Giải thể toàn bộ lực lượng vũ trang địa phương","Chuyển Ban chỉ huy quân sự cấp huyện sang Bộ Công an"],answerIndex:1,explanation:"Thực hiện cải cách hành chính địa phương: xây dựng Ban chỉ huy phòng thủ khu vực, không duy trì Ban chỉ huy quân sự cấp huyện (Thông tư 83/2025/TT-BQP)."},
+{id:17,question:"Quân chủng Hải quân được thành lập ngày 07/5/1955, tiền thân là:",options:["Cục Phòng thủ bờ biển","Cục Tác chiến","Cục Hải quân đánh bộ","Bộ Tư lệnh Cảnh sát biển"],answerIndex:0,explanation:"Quân chủng Hải quân thành lập ngày 07/5/1955, tiền thân là Cục Phòng thủ bờ biển."},
+{id:18,question:"Quân chủng Hải quân hiện có bao nhiêu Vùng Hải quân?",options:["3","4","5","6"],answerIndex:2,explanation:"Quân chủng Hải quân có 5 Vùng Hải quân."},
+{id:19,question:"Quân chủng Phòng không - Không quân được thành lập ngày nào?",options:["22/10/1963","22/12/1944","29/6/1946","07/5/1955"],answerIndex:0,explanation:"Quân chủng Phòng không - Không quân thành lập ngày 22/10/1963; tách thành hai quân chủng năm 1977 và tái hợp nhất năm 1999."},
+{id:20,question:"Quân chủng Phòng không - Không quân tách thành hai quân chủng và tái hợp nhất vào các năm nào?",options:["Tách 1977, hợp nhất 1999","Tách 1975, hợp nhất 1985","Tách 1980, hợp nhất 2000","Tách 1963, hợp nhất 1977"],answerIndex:0,explanation:"Lịch sử: tách năm 1977 và tái hợp nhất năm 1999."},
+{id:21,question:"Binh chủng Pháo binh được thành lập ngày nào?",options:["29/6/1946","25/3/1946","05/10/1959","19/3/1967"],answerIndex:0,explanation:"Binh chủng Pháo binh thành lập ngày 29/6/1946."},
+{id:22,question:"Tám chữ vàng Bác Hồ tặng Binh chủng Pháo binh (13/4/1967) là:",options:["Mở đường thắng lợi","Chân đồng, vai sắt, đánh giỏi, bắn trúng","Thần tốc, táo bạo, bất ngờ, chắc thắng","Trung với Đảng, hiếu với dân"],answerIndex:1,explanation:"Ngày 13/4/1967, Bác Hồ tặng Pháo binh 8 chữ vàng: \"Chân đồng, vai sắt, đánh giỏi, bắn trúng\"."},
+{id:23,question:"Binh chủng Tăng thiết giáp thành lập ngày 05/10/1959; trung đoàn đầu tiên mang phiên hiệu nào?",options:["Trung đoàn 202","Trung đoàn 901","Trung đoàn 361","Trung đoàn 370"],answerIndex:0,explanation:"Trung đoàn Tăng thiết giáp đầu tiên mang phiên hiệu 202."},
+{id:24,question:"Binh chủng Đặc công thành lập ngày 19/3/1967 gồm những lực lượng nào?",options:["Đặc công bộ, Đặc công nước, Đặc công biệt động","Đặc công bộ, Đặc công không, Đặc công hóa","Đặc công nước, Đặc công rừng, Đặc công phòng","Đặc công bộ, Đặc công hải quân, Đặc công thông tin"],answerIndex:0,explanation:"Binh chủng Đặc công có 3 lực lượng: Đặc công bộ, Đặc công nước và Đặc công biệt động."},
+{id:25,question:"Binh chủng Công binh thành lập 25/3/1946 và được Bác Hồ tặng Cờ năm 1952 với dòng chữ:",options:["Mở đường thắng lợi","Quyết chiến quyết thắng","Đoàn kết, kỷ luật, đánh giỏi","Thần tốc, táo bạo"],answerIndex:0,explanation:"Năm 1952, Bác Hồ tặng Binh chủng Công binh lá cờ thêu dòng chữ \"Mở đường thắng lợi\"."},
+{id:26,question:"Binh chủng Hóa học thành lập ngày 19/4/1958, tiền thân là:",options:["Tiểu đoàn Hóa học 6 (901)","Trung đoàn Hóa học 202","Đại đội Hóa học 1","Cục Phòng thủ bờ biển"],answerIndex:0,explanation:"Binh chủng Hóa học thành lập 19/4/1958, tiền thân là Tiểu đoàn Hóa học 6 (901)."},
+{id:27,question:"Binh chủng Thông tin liên lạc được thành lập ngày nào?",options:["09/9/1945","22/12/1944","15/5/1945","19/4/1958"],answerIndex:0,explanation:"Binh chủng Thông tin liên lạc thành lập ngày 09/9/1945."},
+{id:28,question:"Nguyên tắc cơ bản của tác chiến hiệp đồng quân, binh chủng là:",options:["Mỗi quân, binh chủng tự hoạt động độc lập","Các lực lượng phối hợp chặt chẽ, thống nhất về mục đích, thời gian, địa điểm dưới sự chỉ huy thống nhất","Chỉ ưu tiên lực lượng có vũ khí hiện đại nhất","Chỉ hiệp đồng khi gặp khó khăn"],answerIndex:1,explanation:"Tác chiến hiệp đồng yêu cầu các quân, binh chủng phối hợp chặt chẽ, thống nhất theo kế hoạch và chỉ huy chung để phát huy sức mạnh tổng hợp. Cơ quan tham mưu giữ vai trò quan trọng trong tổ chức, điều hòa hiệp đồng, kể cả với lực lượng đổ bộ đường không, đường biển."}
+];
+
+const LETTERS = ['A','B','C','D'];
+let quiz = [], answers = [], cur = 0, startTs = 0, elapsed = 0, tick = null, filter = 'all';
+const $ = id => document.getElementById(id);
+
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+function show(id){['start','quiz','result','review'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo(0,0);}
+
+$('startInfo').textContent = `Bộ đề gồm ${QUESTIONS.length} câu trắc nghiệm, mỗi câu 4 đáp án. Thứ tự câu hỏi và đáp án được xáo trộn ngẫu nhiên.`;
+
+function startQuiz(){
+  quiz = shuffle(QUESTIONS).map(q=>{
+    const opts = shuffle(q.options.map((t,i)=>({t,c:i===q.answerIndex})));
+    return {id:q.id,question:q.question,opts,ans:opts.findIndex(o=>o.c),explanation:q.explanation};
+  });
+  answers = Array(quiz.length).fill(null);
+  cur = 0; filter = 'all'; startTs = Date.now(); elapsed = 0;
+  clearInterval(tick);
+  tick = setInterval(()=>{$('timer').textContent='⏱ '+fmt(Math.floor((Date.now()-startTs)/1000));},1000);
+  $('timer').textContent='⏱ 00:00';
+  show('quiz'); render();
+}
+
+function render(){
+  const q = quiz[cur], done = answers.filter(a=>a!==null).length;
+  $('qCount').textContent = `Câu ${cur+1}/${quiz.length} · Đã làm ${done}`;
+  $('barFill').style.width = (done/quiz.length*100)+'%';
+  $('qBody').innerHTML = `<div class="qtext">${q.question}</div>` + q.opts.map((o,i)=>
+    `<button class="opt ${answers[cur]===i?'sel':''}" onclick="pick(${i})"><b>${LETTERS[i]}</b><span>${o.t}</span></button>`).join('');
+  $('prevBtn').disabled = cur===0;
+  $('nextBtn').disabled = cur===quiz.length-1;
+  $('pal').innerHTML = quiz.map((_,i)=>`<button class="${answers[i]!==null?'done':''} ${i===cur?'cur':''}" onclick="jump(${i})">${i+1}</button>`).join('');
+}
+function pick(i){answers[cur]=i;render();}
+function jump(i){cur=i;render();}
+function go(d){cur=Math.min(quiz.length-1,Math.max(0,cur+d));render();}
+
+function openConfirm(){
+  const skipped = answers.filter(a=>a===null).length;
+  $('confirmMsg').textContent = skipped ? `Bạn còn ${skipped} câu chưa trả lời. Bạn có chắc chắn muốn nộp bài không?` : 'Bạn đã trả lời tất cả các câu. Xác nhận nộp bài?';
+  $('confirm').classList.remove('hidden');
+}
+function closeConfirm(){$('confirm').classList.add('hidden');}
+
+function submitQuiz(){
+  closeConfirm(); clearInterval(tick);
+  elapsed = Math.floor((Date.now()-startTs)/1000);
+  const ok = quiz.filter((q,i)=>answers[i]===q.ans).length;
+  const sk = answers.filter(a=>a===null).length;
+  const no = quiz.length-ok-sk;
+  const pct = Math.round(ok/quiz.length*100);
+  const s10 = (ok/quiz.length*10).toFixed(1);
+  $('sc10').textContent = s10+' / 10';
+  $('scPct').textContent = pct+'% câu trả lời đúng';
+  $('sOk').textContent = ok; $('sNo').textContent = no; $('sSk').textContent = sk; $('sTm').textContent = fmt(elapsed);
+  const r = $('rank');
+  if(pct>=85){r.textContent='Xuất sắc';r.style.cssText='background:#e6f4ea;color:#1e8e3e';}
+  else if(pct>=65){r.textContent='Khá';r.style.cssText='background:#e8f0fe;color:#1a56c4';}
+  else {r.textContent='Cần ôn luyện thêm';r.style.cssText='background:#fce8e6;color:#d93025';}
+  show('result');
+}
+function toResult(){show('result');}
+
+function showReview(){filter='all';show('review');renderReview();}
+function setFilter(f){filter=f;renderReview();}
+function status(i){return answers[i]===null?'skip':(answers[i]===quiz[i].ans?'ok':'no');}
+
+function renderReview(){
+  $('fAll').className = 'btn'+(filter==='all'?'':' sec');
+  $('fWrong').className = 'btn'+(filter==='wrong'?'':' sec');
+  $('rpal').innerHTML = quiz.map((_,i)=>{const s=status(i);return `<button class="${s==='skip'?'':s}" onclick="document.getElementById('rq${i}')?.scrollIntoView({behavior:'smooth'})">${i+1}</button>`;}).join('');
+  const html = quiz.map((q,i)=>{
+    const s = status(i);
+    if(filter==='wrong' && s==='ok') return '';
+    const tag = s==='ok'?'<span class="tag" style="background:var(--ok)">Đúng</span>':s==='no'?'<span class="tag" style="background:var(--no)">Sai</span>':'<span class="tag" style="background:var(--mu)">Bỏ sót</span>';
+    const opts = q.opts.map((o,k)=>{
+      let c='opt dis';
+      if(k===q.ans) c+=' ok'; else if(k===answers[i]) c+=' no';
+      const note = k===q.ans?' ✔ Đáp án đúng':(k===answers[i]?' ✘ Bạn đã chọn':'');
+      return `<div class="${c}"><b>${LETTERS[k]}</b><span>${o.t}<em style="font-weight:600">${note}</em></span></div>`;
+    }).join('');
+    return `<div class="card rv ${s==='skip'?'':s}" id="rq${i}"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><b>Câu ${i+1}</b>${tag}</div><div class="qtext">${q.question}</div>${opts}<div class="exp"><b>Giải thích đáp án:</b> ${q.explanation}</div></div>`;
+  }).join('');
+  $('rList').innerHTML = html || '<div class="card hero"><h2>🎉 Chúc mừng!</h2><p>Bạn không có câu nào sai.</p></div>';
+}
+</script>
+</body>
+</html>
